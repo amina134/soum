@@ -29,13 +29,16 @@ const DisplayAdvert = () => {
     useEffect(() => {
 
         if (advert && advert.imageAdvert && advert.imageAdvert.length > 0) {
-            console.log("image:", advert.imageAdvert[0]);
+            console.log("image heeeeee:", advert.imageAdvert[0]);
             setImageArray(advert.imageAdvert);
 
         }
     }, [advert]);
 
     console.log("ImageArray:", imageArray);
+    imageArray.map((el) =>
+    console.log("path of image of element",el.path))
+    
     const settings = {
         customPaging: function (i) {
             return (
@@ -46,7 +49,7 @@ const DisplayAdvert = () => {
                             height: "50px",
                             objectFit: "cover",
                             borderRadius: "10px"
-                        }} src={imageArray[i].path} />
+                        }} src={`/${imageArray[i].path}`} />
                     </a>
                 </div>
             );
@@ -91,8 +94,9 @@ const DisplayAdvert = () => {
                     <Slider {...settings}>
                         {imageArray.map((el) =>
                             <div key={el._id}>
+                                
                                 <img style={{ width: "100%", height: "30rem", borderRadius: "20px" }}
-                                    src={`.//${el.path}`}></img>
+                                   src={`/${el.path}`}></img>
                             </div>)}
                     </Slider >
                 </div >

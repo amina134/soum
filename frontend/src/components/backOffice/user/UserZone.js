@@ -13,7 +13,6 @@ import Footer from '../../frontOffice/5-footer/Footer';
 const UserZone = () => {
     const Adverts = useSelector(state => state.advertElement);
     const navigate = useNavigate();
-
     const user = useSelector(state => state.userElement);
     const dispatch = useDispatch();
     const getAuth = async () => {
@@ -28,11 +27,12 @@ const UserZone = () => {
         <>
             {token ?
                 (<div>
+                  
                     <HeaderUser user={user} />
-                    <Outlet />
+                    <Outlet/>
                     <div className='divider' />
                     <Footer />
-                </div>) : (<HomePage />)}
+                </div>):(<HomePage />)}
         </>
     );
 }

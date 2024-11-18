@@ -1,6 +1,6 @@
 
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Profiler } from 'react';
 import { useNavigate } from "react-router";
 import { Link } from "react-router-dom";
 import { fetchaccount } from "../../../../api/UsersApi";
@@ -57,15 +57,11 @@ const HeaderUser = ({ user }) => {
         <header className="headerUser flex">
             {token ? (<div className="session-form flex">
                 <div className="icon-session">
-                    {user.imageUser ? (
-                        <img className="img-session" src={user.imageUser} alt='Original' />
-                    ) : (
-
-                        <img className="img-session" src="/images/profil.jpg" alt='default' />
-                    )}
+                    
+                        <img className="img-session" src={user.imageUser} onError={(e)=>{e.target.src="/images/profil.webp"}} alt='Original' />
 
                 </div>
-                {user.firstName}
+                  <h1 className='nom'>{user.firstName} </h1>
             </div>) : (<></>)}
             <button className="menu icon-menu flex" onClick={() => setShowModal(true)} />
 

@@ -1,7 +1,7 @@
 const Footer = () => {
     return (
-        <section>
-            This is the Footer section
+        <section style={{backgroundColor:"red"}}>
+            This is the Footer section aminaaaaaaaaa
         </section >
     )
 }

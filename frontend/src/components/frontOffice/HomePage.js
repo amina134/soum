@@ -26,6 +26,7 @@ const HomePage = () => {
             <RecentlyAdded />
             <div className='divider' />
             < Footer />
+            
         </>
     );
 }

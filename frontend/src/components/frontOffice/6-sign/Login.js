@@ -36,7 +36,7 @@ export default function Login() {
 
     // Overall Form Validity
     const [formValid, setFormValid] = useState();
-    const [success, setSuccess] = useState();
+  
     const [verif,setVerif]=useState("")
 
     const navigate = useNavigate();
@@ -77,7 +77,7 @@ export default function Login() {
     };
 
     const submitLogin = async (values) => {
-        setSuccess("false");
+     
         console.log("provided email:", values.email);
         console.log("provided password:", values.password);
         try {
@@ -101,9 +101,9 @@ export default function Login() {
 
                     console.log("hey")
                 } else {
-                    setSuccess("true");
-                    console.log("success", success)
-                    //  setSuccess("form submitted successfully");
+               
+                  
+             
                      navigate("/userzone");
                   
                 
@@ -172,7 +172,7 @@ export default function Login() {
     };
 
     return (
-        <div>
+        <div >
             <div style={{ marginTop: "5px" }}>
                 <TextField
                     label="Email Address"
@@ -276,20 +276,6 @@ export default function Login() {
             }
 
             {/* Show Success if no issues */}
-            {
-                success && (
-                    <>
-                        <Stack sx={{ width: "100%", paddingTop: "10px" }} spacing={2}>
-                            <Alert severity="success"
-                                size="small">
-                                {success}
-                            </Alert>
-                        </Stack>
-
-                    </>
-                )
-            }
-
             <div style={{ marginTop: "7px", fontSize: "10px", color: "#fff" }}
 
                 margin="left">

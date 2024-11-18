@@ -9,7 +9,9 @@
 /* ========================
     1. Header Design
 =========================== */
-
+.nom{
+    color: var(--title)
+}
 .headerUser.flex {
     justify-content: space-between;
     padding: 0 2.4rem;
